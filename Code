@@ -1,0 +1,175 @@
+#An introduction to the game, how to play and a title
+def main():
+    print("""\nWelcome to Sarthak's Whiz Quizzes! \n""")
+    selection = ["1.Programming Quiz  2.World History Quiz  3. Exit"]
+    print("Your choices are", selection)
+    choice = str(input("\nWhich option would you like to select? 1 , 2 , or 3?\n"))
+    while choice == "1" or "2":
+        if choice == "1":
+            print("\n When presented with multiple choice questions,input your answer by typing the NUMBER which you believe corresponds to the answer. \n Please input all answers in LOWERCASE when prompted to type an answer.\n")
+            programsection()
+        elif choice == "2":
+            print("\n When presented with multiple choice questions,input your answer by typing the NUMBER which you believe corresponds to the answer. \n Please input all answers in LOWERCASE when prompted to type an answer.\n")
+            historysection()
+        elif choice == "3":
+            print("\n Thanks for working hard!\n")
+            exit()
+        else:
+            print("Not a valid option")
+def historysection():
+    global historyscore
+    global historywrong
+    historyscore = 0
+    historywrong = 0
+    print("\nHISTORY SECTION\n")
+    while True:
+        HQ1=str(input("""\nQ1. What continent did the first humans emerge from?:
+                            1. Asia
+                            2. Europe
+                            3. Asia
+                            4. Africa\n"""))
+        if HQ1 == "4":
+            print("Congrats, that's it!\n")
+            historyscore = historyscore+1
+        elif HQ1 != "4":
+            print("\nSorry, that's not it. The right answer is #4, homo sapiens emerged as a distinct species in Africa around 5 million years ago.\n")
+            historywrong = historywrong+1
+        HQ2=str(input("""\nQ2.When did humanity exit the Stone Age?:
+                             1. 2.5 million years ago
+                             2. 4 million years ago
+                             3. 10 millions years ago\n"""))
+        if HQ2 == "1":
+            print("Congrats, that's it!\n")
+            historyscore = historyscore+1
+        elif HQ2 != "1":
+            print("Sorry, that's not it. The right answer is #1, the stone age ended 2.5 million years ago, and proceeded to ente the Bronze Age.\n")
+            historywrong = historywrong+1
+        HQ3=str(input("""\nQ3. This Ancient River Valley Civilization, bounded by the Tigris and Euphrates, is known as the  ______ civilization. \n Fill the blank with a one word answer with the first letter capitalized.\n"""))
+        answer = "Mesopotamian"
+        if HQ3 == answer:
+            print("Congrats, that's it!\n")
+            historyscore = historyscore+1
+        elif HQ3 != answer:
+            print("Nope, that is not it. The correct answer is Egyptian.\n")
+            historywrong = historywrong+1
+        HQ4=str(input("""\nQ4. Which one of these rulers are credited for being the first to codify law:
+                             1. Justinian
+                             2. Hammurabi
+                             3. Gilgamesh
+                             4. Constantine\n"""))
+        if HQ4 == "2":
+            print("Congrats, that's it!\n")
+            historyscore = historyscore+1
+        elif HQ4 != "2":
+            print("Sorry, that's not it! Humans first emerged from Asia.")
+            historywrong = historywrong+1
+        HQ5=str(input("""\nQ5. Which one of these were Classical Era Empires?
+                             1. Gupta Dynasty
+                             2. Zhong Dynasty
+                             3. British
+                             4. Ottoman \n"""))
+        if HQ5 == "1":
+            print("Congrats!")
+            historyscore = historyscore+1
+        elif HQ5 != "1":
+            print("Sorry, that's not it. The correct answer is #1, the Gupta Dynasty was a large north Indian Empire that was both a part of, and facilitated the, Classical Era.\n")
+            historywrong = historywrong+1
+        HQ6=str(input("""\nQ6. Qin Shi Huang Di was the first _____ of a unified China. \n Fill in the blank with a one word title, with the first letter capitalized.\n"""))
+        answer2 = "Emperor"
+        if HQ6 == answer2 :
+            print("Correctumundo!")
+            historyscore = historyscore+1
+        elif HQ6 != answer2:
+            print("Sorry, that's not it. The correct answer is Emperor. Qin Huang Di unified and led China from 221 to 210 BCE")
+            historywrong = historywrong+1
+        HQ7=str(input("\nQ7.Hinduism is often labeled polytheistic, however, is not so because of all it's Gods being part of ______. \n Fill in the blank with a one word answer, with the first letter capitalized.\n"))
+        answer3 = "Brahman"
+        if HQ7 == answer3:
+            print("Yup, that's it")
+            historyscore = historyscore+1
+        elif HQ7 !=  answer3:
+            print("Sorry, that's not it. The correct answer is Brahman. \n This is the concept of a'World Soul' encompassing all Hindu deities, and indeed, all beings of the world.")
+            historywrong = historywrong+1
+        HQ8=str(input("""\nQ8. Who was the first explorer to circumnavigate the globe?
+                          1. Juan Elcano
+                          2. Christopher Columbus
+                          3. Ponce De Leon
+                          4. Prince Henry\n"""))
+        if HQ8 == "1":
+            print("You got it!")
+            historyscore = historyscore+1
+        elif HQ8 != "1":
+            print("Nope! The correct answer was #1. Leader of Ferdinand Magellan's crew after Magellan's death, \n Elcano and remaining circumnavigated the globe in the early 1500s.")
+            historywrong = historywrong+1
+        HQ9=str(input("""\nQ9. What is the Eastern and longest surviving Empire of Rome termed:
+                          1. Mongol Empire
+                          2. The Golden Horde
+                          3. Byzantine Empire\n"""))
+        if HQ9 == "3":
+            print("You got it!")
+            historyscore = historyscore+1
+        elif HQ9 != "3":
+            print("Nope! The correct answer was #3. \n The Byzantine Empire continued to operate under Roman legacy far after Rome was destroyed in 476 A.D")
+            historywrong = historywrong+1
+        print("\nSo ends the History section, your score is:", historyscore , " out of 9 total.""\nYou have gotten",historywrong,"wrong. \n Now, you will be redirected to the main menu.\n")
+        main()
+
+def programsection():
+    global progscore
+    progscore = 0
+    progwrong = 0
+    print("\nPROGRAMMING SECTION\n")
+    PQ1=input("""\nA tuple is different from a list because a tuple is ______ . \n Enter a one-word answer. HINT: answer will began with an 'i'\n""")
+    answer4 = "immutable"
+    if PQ1 == answer4:
+        print("Wow! You've been paying attention!")
+        progscore+1
+    if PQ1 != answer4:
+        print("\n Bad Luck! Answer is 'immutable' seeing as you can't use append, add, remove, or pop functions when using them.")
+        progwrong+1
+    PQ2=input("""\nWhile loops permits code to execute _______ before a certain condition is met. \n Enter a one-word answer. Hint: answer will began with an 'r'!\n""")
+    answer6="repeatedly"
+    if PQ2 == answer6:
+        print("Correct! Good job!")
+        progscore+1
+    if PQ2 != answer6:
+        print("\nBiscuits! That's not it! The correct answer is 'repeatedly', \n seeing as while loops will continue endlessly till a condition is met.\n")
+        progwrong+1
+    PQ3 = input("Define a function called 'eggs'")
+    answer7 = ("def eggs()")
+    if PQ3 == answer7:
+        print("Brilliant! Copy your answer for the next question.")
+        progscore+1
+    if PQ3 != answer7:
+        print("Nope. The proper notation is 'def eggs()'")
+        progwrong+1
+    PQ4 = input("\n Now, type the notation you would use to run this function.\n")
+    answer8 = ("""eggs()""")
+    if PQ4 == answer8:
+        print("You must be a genius")
+        progscore+1
+    if PQ4 != answer8:
+        print ("Incorrect! This is a tough one!")
+        progwrong+1
+    PQ5= input("""\nIf Bobby needs a data type that includes numbers, letters, and symbols, Bobby needs a ______.\n
+               \nFill in the blanks with the appropriate one word answer in LOWERCASE\n""")
+    if PQ5 == ("string"):
+        print("Wow! Correct!")
+        progscore+1
+    if PQ5 != ("string"):
+        print("Nope! The correct answer is 'string'")
+        progwrong+1
+    PQ6 = input("Here's an easy one: What is the full form of elif?")
+    if PQ6 == ("else if"):
+        print("You got it!")
+        progscore+1
+    if PQ6 != ("else if"):
+        print("Tough break! Correct answer is 'else if'")
+        progwrong+1
+    print("\nSo, that ends the Programming section, your score is:", progscore , "out of 9 total.\n You have gotten",progwrong,"wrong. \n Now, you will be redirected to the main menu.\n")
+    main()
+
+def exit():
+    from sys import exit
+    raise SystemExit
+main()
